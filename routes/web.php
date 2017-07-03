@@ -32,3 +32,7 @@ Route::get('/', function () {
     return view('welcome', ['links' => $links]);
 });
 
+Route::get('/submit', function () {
+    return view('submit');
+});
+
