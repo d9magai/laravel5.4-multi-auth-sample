@@ -26,3 +26,9 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index')->name('home');
 });
+
+Route::get('/', function () {
+    $links = \App\Link::all();
+    return view('welcome', ['links' => $links]);
+});
+
