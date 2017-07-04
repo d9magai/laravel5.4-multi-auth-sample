@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <h1>Submit a link</h1>
-            <form action="/submit" method="post">
+            <form action="/user/submit" method="post">
                 {!! csrf_field() !!}
                 <div class="form-group">
                     <label for="title">Title</label>
