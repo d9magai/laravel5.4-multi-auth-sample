@@ -56,7 +56,7 @@
                         </li>
                     @else
                         <li><a href="{{ url('/user/login') }}">User Login</a></li>
-                        <li><a href="{{ url('/user/register') }}">User Register</a></li>
+                        <li><a href="{{ url('/admin/userregister') }}">User Register</a></li>
                     @endif
                     @if (Auth::guard('admin')->check())
                         <li>
