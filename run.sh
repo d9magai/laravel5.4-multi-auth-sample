@@ -11,8 +11,10 @@ if [ -n "$(command -v yum)" ]; then
     sudo systemctl enable httpd
     sudo systemctl start httpd
 elif [ -n "$(command -v apt-get)" ]; then
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     sudo apt-get update >/dev/null
-    sudo apt-get install -y git zsh
+    sudo apt-get install -y git zsh vim nkf colordiff docker-ce apache2 mysql-client php php-curl php-zip php-cli php-mbstring php-xml php-mysql php-xdebug
 fi
 
 if type "composer" > /dev/null 2>&1; then
