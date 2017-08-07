@@ -29,7 +29,7 @@ fi
 
 sudo docker run -p 3306:3306 --restart=always --name mysqld -e MYSQL_USER=homestead -e MYSQL_PASSWORD=secret -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=homestead -d mysql
 composer install
-cp .env.example .env
+curl -o .env -sL 'https://raw.githubusercontent.com/laravel/laravel/master/.env.example'
 php artisan key:generate
 php artisan config:clear
 
