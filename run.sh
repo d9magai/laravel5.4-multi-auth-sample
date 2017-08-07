@@ -27,7 +27,7 @@ else
     composer global require hirak/prestissimo
 fi
 
-sudo docker run -p 3306:3306 --name mysqld -e MYSQL_USER=homestead -e MYSQL_PASSWORD=secret -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=homestead -d mysql
+sudo docker run -p 3306:3306 --restart=always --name mysqld -e MYSQL_USER=homestead -e MYSQL_PASSWORD=secret -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=homestead -d mysql
 composer install
 cp .env.example .env
 php artisan key:generate
